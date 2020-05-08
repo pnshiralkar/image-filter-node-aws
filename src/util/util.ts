@@ -21,7 +21,7 @@ export async function filterImageFromURL(inputURL: string): Promise<string> {
                 });
         }).catch(reason => {
             if (reason.toString().includes('no such file or directory')) {
-                reject(400)
+                reject(422)
             } else
                 reject(500)
         });

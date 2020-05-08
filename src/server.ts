@@ -41,7 +41,7 @@ import {deleteLocalFiles, filterImageFromURL} from './util/util';
                     deleteLocalFiles([filteredImage])
                 })
             }).catch(errCode => {
-                if (errCode === 400)
+                if (errCode === 422)
                     res.send(JSON.stringify({error: 'Invalid image URL'}))
                 else
                     res.send(JSON.stringify({error: 'Internal Server Error'}))
