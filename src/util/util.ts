@@ -20,10 +20,7 @@ export async function filterImageFromURL(inputURL: string): Promise<string> {
                     resolve(__dirname + outpath);
                 });
         }).catch(reason => {
-            if (reason.toString().includes('no such file or directory')) {
-                reject(422)
-            } else
-                reject(500)
+            reject(422)
         });
     });
 }
